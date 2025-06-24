@@ -122,7 +122,7 @@ class Network(object):
                 "name": interface,
                 "mac": mac,
                 "ip": [
-                    "{}/{}".format(x["addr"], IPAddress(x["mask"]).netmask_bits()) for x in ip_addr
+                    "{}/{}".format(x["addr"], IPAddress(x["netmask"]).netmask_bits()) for x in ip_addr
                 ]
                 if ip_addr
                 else None,  # FIXME: handle IPv6 addresses
